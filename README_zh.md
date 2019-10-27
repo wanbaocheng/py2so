@@ -78,8 +78,8 @@ sudo bash config.sh
 
 整个Python项目加密前:
 
-![demo1](https://github.com/cckuailong/py2so/blob/master/img/1.png)
+![demo1](img/1.png)
 
 py2so加密后效果:
 
-![demo2](https://github.com/cckuailong/py2so/blob/master/img/2.png)
+![demo2](img/2.png)
