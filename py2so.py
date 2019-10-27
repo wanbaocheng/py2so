@@ -3,13 +3,13 @@ import os
 import sys
 
 
-def transfer(dir_pref):
+def transfer(dir_pref, is_clear=False):
     print(dir_pref)
     os.system('cython -2 %s.py;'
               'gcc -c -fPIC -I/usr/local/include/python3.%sm/ %s.c -o %s.o'
               % (dir_pref, p_subv, dir_pref, dir_pref))
     os.system('gcc -shared %s.o -o %s.so' % (dir_pref, dir_pref))
-    if clear:
+    if is_clear:
         os.system('rm -f %s.c %s.o %s.py' % (dir_pref, dir_pref, dir_pref))
     else:
         os.system('rm -f %s.c %s.o' % (dir_pref, dir_pref))
@@ -44,7 +44,7 @@ py2so needs the environment of python3
   python py2so.py -f test_file.py
   python py2so.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
     '''
-    clear = False
+    is_clear = False
     p_subv = '6'
     root_names_D = ''
     root_names_d = ''
@@ -70,7 +70,7 @@ py2so needs the environment of python3
         elif key in ['-p', '--py']:
             p_subv = value
         elif key in ['-c', '--clear']:
-            clear = True
+            is_clear = True
         elif key in ['-D', '--Directory']:
             root_names_D = [os.path.abspath(val.strip()) for val in value.split(',') if val.strip() is not '']
             print(root_names_D)
@@ -130,7 +130,7 @@ py2so needs the environment of python3
                         elif file.endswith('.so'):
                             pass
                         elif file.endswith('.py'):
-                            transfer(dir_pref)
+                            transfer(dir_pref, is_clear)
             except Exception as err:
                 print(err)
                 if "Python.h" in str(err):
@@ -171,7 +171,7 @@ py2so needs the environment of python3
                                 print('*: ', dir_pref)
                                 with open(dir_pref + '.py', 'r') as f:
                                     if f.readline().find('#py2so') >= 0:
-                                        transfer(dir_pref)
+                                        transfer(dir_pref, is_clear)
             except Exception as err:
                 print(err)
                 if "Python.h" in str(err):
@@ -180,6 +180,6 @@ py2so needs the environment of python3
     if file_name != '':
         try:
             dir_pref = file_name.split('.')[0]
-            transfer(dir_pref)
+            transfer(dir_pref, is_clear)
         except Exception as err:
             print(err)
