@@ -1,6 +1,6 @@
 # py2so
-[English](README.md) || 
-[中文](README_zh.md)
+[English](http://coding.jd.com/wanbaocheng/py2so/blob/master/README.md) || 
+[中文](http://coding.jd.com/wanbaocheng/py2so/blob/master/README_zh.md)
 
 ## What is py2so
 1. py2so is tool to change the .py to .so, you can use it to hide the source code of py

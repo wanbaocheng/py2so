@@ -1,6 +1,6 @@
 # py2so
-[English](README.md) || 
-[中文](README_zh.md)
+[English](http://coding.jd.com/wanbaocheng/py2so/blob/master/README.md) || 
+[中文](http://coding.jd.com/wanbaocheng/py2so/blob/master/README_zh.md)
 
 ## py2so简介
 1. py2so可以将python文件转化为so文件，达到加密python文件的目的
