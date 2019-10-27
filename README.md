@@ -28,7 +28,8 @@ python py2so.py [选项] ...
   -h,  --help       显示帮助菜单
   -p,  --py         Python的子版本号, 默认值为 6
                     例: -p 7  (比如你使用python3.7)
-  -d,  --directory  Python项目路径 (如果使用-d参数, 将加密整个Python项目)
+  -D,  --Directory  Python项目路径 (如果使用-D参数, 将加密整个Python项目)
+  -d,  --directory  按首行是否有#py2so共六个字符作为标记进行加密，D优先于d
   -f,  --file       Python文件 (如果使用-f, 将加密单个Python文件)
   -c,  --clear      删除原文件（项目）
                     (警告: -c参数将会删除原文件, 但是为了避免损失，py2so_py3会自动备份原文件)
