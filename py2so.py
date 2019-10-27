@@ -37,7 +37,7 @@ Example:
   python py2so_py3.py -d test_dir -m __init__.py,setup.py,[poc/,resource/,venv/,interface/] -c
     '''
     clear = 0
-    p_subv = '5'
+    p_subv = '6'
     root_name = ''
     file_name = ''
     m_list = ''
